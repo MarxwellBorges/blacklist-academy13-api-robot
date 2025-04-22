@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2025-04-22T11:33:59.198205" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Blacklist.api.robot\Tests">
+<suite id="s1-s1" name="Get contagemdiretoria" source="C:\Blacklist.api.robot\Tests\Get_contagemdiretoria.robot">
+<test id="s1-s1-t1" name="CT03 - Contagem de diretoria" line="11">
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:00.222911" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:00.222911" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="0.000000"/>
+</kw>
+<kw name="Entrar com usuário administrador" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:00.222911" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=${login}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:00.222911" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="0.000000"/>
+</kw>
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:00.227919" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="0.005008"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:00.227919" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:00.227919" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="0.005008"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:11.408237" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("&lt;urllib3.connection.HTTPSConnection object at 0x000002162205F8C0&gt;: Failed to resolve 'black-list.qacoders.dev.br' ([Errno 11001] getaddrinfo failed)")': /api/login/</msg>
+<msg time="2025-04-22T11:34:22.564101" level="INFO">POST Request : url=https://black-list.qacoders.dev.br/api/login/ 
+ path_url=/api/login/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2025-04-22T11:34:22.564101" level="INFO">POST Response : url=https://black-list.qacoders.dev.br/api/login/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"534-drXTg7JlLEIpbsRwRMwZETeWlEc"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2MCwiZXhwIjoxNzQ1NDE4ODYwfQ.KFYUOk3NuRtfk2osta6H2m7Atmp-Q6UqJibPhlbffJI"} 
+ </msg>
+<msg time="2025-04-22T11:34:22.564101" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:22.565101" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/login/</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:00.227919" elapsed="22.337182"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.567093" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2MCwiZXhwIjoxNzQ1NDE4ODYwfQ.KFYUOk3NuRtfk2osta6H2m7Atmp-Q6UqJibPhlbffJI'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.565101" elapsed="0.001992"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.569088" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<arg>${TOKEN}</arg>
+<arg>${resposta.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.567093" elapsed="0.001995"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="22.346177"/>
+</kw>
+<kw name="Contagem de diretoria" owner="listar_diretoria">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.570086" level="INFO">${headers} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<var>${headers}</var>
+<arg>Authorization=${TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.570086" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:22.785318" level="INFO">GET Request : url=https://black-list.qacoders.dev.br/api/board/count/ 
+ path_url=/api/board/count/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2MCwiZXhwIjoxNzQ1NDE4ODYwfQ.KFYUOk3NuRtfk2osta6H2m7Atmp-Q6UqJibPhlbffJI'} 
+ body=None 
+ </msg>
+<msg time="2025-04-22T11:34:22.785318" level="INFO">GET Response : url=https://black-list.qacoders.dev.br/api/board/count/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '13', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"d-CwmfAdI5DQ8VEHz0HQ4agFm2aeE"'} 
+ body={"count":385} 
+ </msg>
+<msg time="2025-04-22T11:34:22.786313" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:22.786313" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=board/count/</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.570086" elapsed="0.216227"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.787311" level="INFO">{'count': 385}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.786313" elapsed="0.000998"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.787311" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resposta.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.787311" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:22.570086" elapsed="0.218221"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:00.222911" elapsed="22.565652"/>
+</test>
+<test id="s1-s1-t2" name="CT04 - Contagem de diretoria sem token" line="16">
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.791039" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.791039" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:22.791039" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:22.791039" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:22.790042" elapsed="0.000997"/>
+</kw>
+<kw name="Entrar com usuário administrador" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.792071" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=${login}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.792071" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.792071" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.792071" elapsed="0.000000"/>
+</kw>
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:22.793071" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.793071" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:22.793071" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:22.793071" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:22.793071" elapsed="0.000997"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:23.615932" level="INFO">POST Request : url=https://black-list.qacoders.dev.br/api/login/ 
+ path_url=/api/login/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2025-04-22T11:34:23.615932" level="INFO">POST Response : url=https://black-list.qacoders.dev.br/api/login/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"534-hG+q2YiENqk/J0xrUYFagmz4MKc"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2MSwiZXhwIjoxNzQ1NDE4ODYxfQ.1_rSF0xFypCJ62650X9Tdg2nYm5IUT8IWQBlV6wERuk"} 
+ </msg>
+<msg time="2025-04-22T11:34:23.615932" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:23.618924" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/login/</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:22.794068" elapsed="0.824856"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.621916" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2MSwiZXhwIjoxNzQ1NDE4ODYxfQ.1_rSF0xFypCJ62650X9Tdg2nYm5IUT8IWQBlV6wERuk'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.620922" elapsed="0.000994"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.626905" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<arg>${TOKEN}</arg>
+<arg>${resposta.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.622914" elapsed="0.003991"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:22.792071" elapsed="0.834834"/>
+</kw>
+<kw name="Contagem de diretroria sem token" owner="listar_diretoria">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.629895" level="INFO">${headers} = {'Authorization': ''}</msg>
+<var>${headers}</var>
+<arg>Authorization=</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.629895" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:23.836341" level="INFO">GET Request : url=https://black-list.qacoders.dev.br/api/board/count/ 
+ path_url=/api/board/count/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': ''} 
+ body=None 
+ </msg>
+<msg time="2025-04-22T11:34:23.836341" level="INFO">GET Response : url=https://black-list.qacoders.dev.br/api/board/count/ 
+ status=403, reason=Forbidden 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"21-kOzJ7XpAEH2I+7m/1Mm7EpcituE"', 'Content-Encoding': 'gzip'} 
+ body={"errors":["No token provided."]} 
+ </msg>
+<msg time="2025-04-22T11:34:23.836341" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:23.837340" level="INFO">${resposta} = &lt;Response [403]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=board/count/</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=403</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.630894" elapsed="0.206446"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.839339" level="INFO">{'errors': ['No token provided.']}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.838337" elapsed="0.001002"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.841330" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resposta.status_code}</arg>
+<arg>403</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.840331" elapsed="0.001995"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.843324" level="INFO">Argument types are:
+&lt;class 'list'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resposta.json()["errors"]}</arg>
+<arg>['No token provided.']</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.842326" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:23.628898" elapsed="0.214426"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:22.789042" elapsed="1.060267"/>
+</test>
+<test id="s1-s1-t3" name="CT05 - Não encontrado" line="21">
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.852300" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.852300" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:23.853297" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:23.852300" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:23.851303" elapsed="0.001994"/>
+</kw>
+<kw name="Entrar com usuário administrador" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.854294" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=${login}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.853297" elapsed="0.000997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.854294" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.854294" elapsed="0.000000"/>
+</kw>
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:23.855292" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.855292" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:23.855292" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:23.855292" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:23.854294" elapsed="0.001995"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:24.654857" level="INFO">POST Request : url=https://black-list.qacoders.dev.br/api/login/ 
+ path_url=/api/login/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2025-04-22T11:34:24.655854" level="INFO">POST Response : url=https://black-list.qacoders.dev.br/api/login/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:23 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"534-mR42eRHvMMuUiWtnSjfDjxcbS7A"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2MywiZXhwIjoxNzQ1NDE4ODYzfQ.xTR1awyPm8NzcX53w4fYYiIrerHbo-4wlHR71sFFoUM"} 
+ </msg>
+<msg time="2025-04-22T11:34:24.655854" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:24.656850" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/login/</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:23.856289" elapsed="0.800561"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.658060" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2MywiZXhwIjoxNzQ1NDE4ODYzfQ.xTR1awyPm8NzcX53w4fYYiIrerHbo-4wlHR71sFFoUM'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.656850" elapsed="0.001210"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.662054" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<arg>${TOKEN}</arg>
+<arg>${resposta.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.659064" elapsed="0.002990"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:23.853297" elapsed="0.808757"/>
+</kw>
+<kw name="Não encontrado" owner="listar_diretoria">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.665479" level="INFO">${headers} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<var>${headers}</var>
+<arg>Authorization=${TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.664477" elapsed="0.001002"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:24.874360" level="INFO">GET Request : url=https://black-list.qacoders.dev.br/api/board/count/1234 
+ path_url=/api/board/count/1234 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2MywiZXhwIjoxNzQ1NDE4ODYzfQ.xTR1awyPm8NzcX53w4fYYiIrerHbo-4wlHR71sFFoUM'} 
+ body=None 
+ </msg>
+<msg time="2025-04-22T11:34:24.874360" level="INFO">GET Response : url=https://black-list.qacoders.dev.br/api/board/count/1234 
+ status=404, reason=Not Found 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:23 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Security-Policy': "default-src 'none'", 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;pre&gt;Cannot GET /api/board/count/1234&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg time="2025-04-22T11:34:24.874360" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:24.878349" level="INFO">${resposta} = &lt;Response [404]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=board/count/1234</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=404</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.666468" elapsed="0.211881"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.880344" level="INFO">&lt;Response [404]&gt;</msg>
+<arg>${resposta}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.879346" elapsed="0.000998"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.882341" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resposta.status_code}</arg>
+<arg>404</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.881341" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:24.663470" elapsed="0.218871"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:23.851303" elapsed="1.034028"/>
+</test>
+<test id="s1-s1-t4" name="CT06 - Erro interno" line="26">
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.897298" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.897298" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:24.898296" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:24.898296" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:24.896300" elapsed="0.003992"/>
+</kw>
+<kw name="Entrar com usuário administrador" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.903288" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=${login}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.903288" elapsed="0.000996"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.905282" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.904284" elapsed="0.000998"/>
+</kw>
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:24.906276" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.906276" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:24.908269" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:24.907271" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:24.905282" elapsed="0.002987"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:26.794384" level="INFO">POST Request : url=https://black-list.qacoders.dev.br/api/login/ 
+ path_url=/api/login/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2025-04-22T11:34:26.794384" level="INFO">POST Response : url=https://black-list.qacoders.dev.br/api/login/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"534-q3V9nPpdZB50KWrUhERu6j7Wq5U"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NSwiZXhwIjoxNzQ1NDE4ODY1fQ.AfGujk20PaABhzcc-D0-L-FeMQOLvknZ7MOdM3WNOnI"} 
+ </msg>
+<msg time="2025-04-22T11:34:26.794384" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:26.798394" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/login/</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:24.908269" elapsed="1.890125"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:26.798394" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NSwiZXhwIjoxNzQ1NDE4ODY1fQ.AfGujk20PaABhzcc-D0-L-FeMQOLvknZ7MOdM3WNOnI'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:26.798394" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T11:34:26.798394" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<arg>${TOKEN}</arg>
+<arg>${resposta.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T11:34:26.798394" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:24.902285" elapsed="1.896109"/>
+</kw>
+<kw name="Erro Interno do Servidor" owner="listar_diretoria">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:26.798394" level="INFO">${headers} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<var>${headers}</var>
+<arg>Authorization=${TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:26.798394" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:27.038270" level="INFO">GET Request : url=https://black-list.qacoders.dev.br/api/board/coun 
+ path_url=/api/board/coun 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NSwiZXhwIjoxNzQ1NDE4ODY1fQ.AfGujk20PaABhzcc-D0-L-FeMQOLvknZ7MOdM3WNOnI'} 
+ body=None 
+ </msg>
+<msg time="2025-04-22T11:34:27.038270" level="INFO">GET Response : url=https://black-list.qacoders.dev.br/api/board/coun 
+ status=500, reason=Internal Server Error 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '115', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"73-sG2tc2wcWF2tUYXAc6qODaaEjsk"'} 
+ body={"error":"CastError: Cast to ObjectId failed for value \"coun\" (type string) at path \"_id\" for model \"Board\""} 
+ </msg>
+<msg time="2025-04-22T11:34:27.038270" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:27.038270" level="INFO">${resposta} = &lt;Response [500]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=board/coun</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=500</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:26.798394" elapsed="0.239876"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.048179" level="INFO">{'error': 'CastError: Cast to ObjectId failed for value "coun" (type string) at path "_id" for model "Board"'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.038270" elapsed="0.009909"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.048179" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resposta.status_code}</arg>
+<arg>500</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.048179" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${resposta.json()["error"]}</arg>
+<arg>CastError: Cast to ObjectId failed for value "coun" (type string) at path "_id" for model "Board"</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.048179" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:26.798394" elapsed="0.249785"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:24.895304" elapsed="2.152875"/>
+</test>
+<status status="PASS" start="2025-04-22T11:33:59.257959" elapsed="27.790220"/>
+</suite>
+<suite id="s1-s2" name="Post criardiretoria" source="C:\Blacklist.api.robot\Tests\Post_criardiretoria.robot">
+<test id="s1-s2-t1" name="CT02 - Criar diretoria" line="10">
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.083173" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.083173" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:27.083173" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:27.083173" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.083173" elapsed="0.000000"/>
+</kw>
+<kw name="Entrar com usuário administrador" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.088184" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=${login}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.088184" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.088184" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.088184" elapsed="0.000000"/>
+</kw>
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.089980" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.088184" elapsed="0.002748"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:27.090932" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:27.090932" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.088184" elapsed="0.002748"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:27.962448" level="INFO">POST Request : url=https://black-list.qacoders.dev.br/api/login/ 
+ path_url=/api/login/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2025-04-22T11:34:27.962448" level="INFO">POST Response : url=https://black-list.qacoders.dev.br/api/login/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:26 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"534-8Ysv44h8BP45wzLrhBQVHYekpVE"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NiwiZXhwIjoxNzQ1NDE4ODY2fQ.UycDRShV0XP24YxtBjimSHHXeTyT6M1PokB8FGlJ5VU"} 
+ </msg>
+<msg time="2025-04-22T11:34:27.962448" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:27.962448" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/login/</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.090932" elapsed="0.871516"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.967954" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NiwiZXhwIjoxNzQ1NDE4ODY2fQ.UycDRShV0XP24YxtBjimSHHXeTyT6M1PokB8FGlJ5VU'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.967954" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.967954" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<arg>${TOKEN}</arg>
+<arg>${resposta.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.967954" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.083173" elapsed="0.884781"/>
+</kw>
+<kw name="Criar diretoria" owner="criar_diretoria">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-04-22T11:34:27.967954" level="INFO">${palavra_randomica} = hVBDDwYq</msg>
+<var>${palavra_randomica}</var>
+<arg>length=8</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.967954" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-04-22T11:34:27.967954" level="INFO">${palavra_randomica} = hvbddwyq</msg>
+<var>${palavra_randomica}</var>
+<arg>${palavra_randomica}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.967954" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.972240" level="INFO">${NOME_DIRETORIA} = hvbddwyq</msg>
+<arg>${NOME_DIRETORIA}</arg>
+<arg>${palavra_randomica}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.967954" elapsed="0.004286"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.972819" level="INFO">hvbddwyq</msg>
+<arg>${NOME_DIRETORIA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.972240" elapsed="0.000579"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.967954" elapsed="0.004865"/>
+</kw>
+<kw name="Cadastrar nova diretoria" owner="criar_diretoria">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.973213" level="INFO">${body} = {'boardName': 'hvbddwyq'}</msg>
+<var>${body}</var>
+<arg>boardName=${NOME_DIRETORIA}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.973213" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.973213" level="INFO">{'boardName': 'hvbddwyq'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.973213" elapsed="0.000000"/>
+</kw>
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.975588" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.975588" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:27.975588" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:27.975588" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.975588" elapsed="0.000000"/>
+</kw>
+<kw name="Entrar com usuário administrador" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.976584" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=${login}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.976584" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.977583" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.976584" elapsed="0.000999"/>
+</kw>
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:27.977583" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.977583" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:27.978581" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:27.978581" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.977583" elapsed="0.001994"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:28.728187" level="INFO">POST Request : url=https://black-list.qacoders.dev.br/api/login/ 
+ path_url=/api/login/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2025-04-22T11:34:28.728187" level="INFO">POST Response : url=https://black-list.qacoders.dev.br/api/login/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"534-NFLC/sIrntJE67ZhEhY1MN2htrA"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NywiZXhwIjoxNzQ1NDE4ODY3fQ.UbRz_JivfhR7W0xIiauBe_gig3EVDQd_XSo2scGXhqY"} 
+ </msg>
+<msg time="2025-04-22T11:34:28.728187" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:28.728187" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/login/</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:27.980575" elapsed="0.747612"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:28.728187" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NywiZXhwIjoxNzQ1NDE4ODY3fQ.UbRz_JivfhR7W0xIiauBe_gig3EVDQd_XSo2scGXhqY'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.728187" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T11:34:28.728187" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<arg>${TOKEN}</arg>
+<arg>${resposta.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.728187" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.976584" elapsed="0.751603"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:28.737985" level="INFO">${headers} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<var>${headers}</var>
+<arg>Authorization=${TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.728187" elapsed="0.009798"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:28.948321" level="INFO">POST Request : url=https://black-list.qacoders.dev.br/api/board/ 
+ path_url=/api/board/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NywiZXhwIjoxNzQ1NDE4ODY3fQ.UbRz_JivfhR7W0xIiauBe_gig3EVDQd_XSo2scGXhqY', 'Content-Length': '25'} 
+ body=b'{"boardName": "hvbddwyq"}' 
+ </msg>
+<msg time="2025-04-22T11:34:28.948321" level="INFO">POST Response : url=https://black-list.qacoders.dev.br/api/board/ 
+ status=201, reason=Created 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '344', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"158-DSpMIccfCETbOdyfnX/WZl2YRJw"'} 
+ body={"msg":"Cadastro realizado com sucesso!","newBoard":{"boardName":"hvbddwyq","boardCode":"386","status":true,"audit":[{"registrationDate":"terça-feira, 22/04/2025, 11:34:27 BRT","registeredBy":{"userId":"66db5e9eb6224843903c44cb","userLogin":"sysadmin@qacoders.com"},"_id":"6807a8f3360a6bf52dc0cda4"}],"_id":"6807a8f3360a6bf52dc0cda3","__v":0}} 
+ </msg>
+<msg time="2025-04-22T11:34:28.948321" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:28.948321" level="INFO">${resposta} = &lt;Response [201]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/board/</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.737985" elapsed="0.210336"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:28.948321" level="INFO">{'msg': 'Cadastro realizado com sucesso!', 'newBoard': {'boardName': 'hvbddwyq', 'boardCode': '386', 'status': True, 'audit': [{'registrationDate': 'terça-feira, 22/04/2025, 11:34:27 BRT', 'registeredBy': {'userId': '66db5e9eb6224843903c44cb', 'userLogin': 'sysadmin@qacoders.com'}, '_id': '6807a8f3360a6bf52dc0cda4'}], '_id': '6807a8f3360a6bf52dc0cda3', '__v': 0}}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.948321" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${resposta.json()["msg"]}</arg>
+<arg>Cadastro realizado com sucesso!</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.948321" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.973213" elapsed="0.975108"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:27.077871" elapsed="1.870450"/>
+</test>
+<status status="PASS" start="2025-04-22T11:34:27.053748" elapsed="1.894573"/>
+</suite>
+<suite id="s1-s3" name="Post loginadmin" source="C:\Blacklist.api.robot\Tests\Post_loginadmin.robot">
+<test id="s1-s3-t1" name="CT 01 - Login administrador" line="7">
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:28.982038" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.982038" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:28.982976" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:28.982976" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:28.982038" elapsed="0.000938"/>
+</kw>
+<kw name="Entrar com usuário administrador" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:28.984970" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=${login}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.983974" elapsed="0.000996"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:28.984970" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.984970" elapsed="0.000000"/>
+</kw>
+<kw name="Criar sessão" owner="geral">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:28.986966" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.986966" elapsed="0.000998"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:28.987964" level="INFO">Creating Session using : alias=Blacklist, url=https://black-list.qacoders.dev.br/api, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=Blacklist</arg>
+<arg>url=${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-22T11:34:28.987964" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:28.984970" elapsed="0.002994"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:29.608123" level="INFO">POST Request : url=https://black-list.qacoders.dev.br/api/login/ 
+ path_url=/api/login/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2025-04-22T11:34:29.608123" level="INFO">POST Response : url=https://black-list.qacoders.dev.br/api/login/ 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"534-NFLC/sIrntJE67ZhEhY1MN2htrA"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NywiZXhwIjoxNzQ1NDE4ODY3fQ.UbRz_JivfhR7W0xIiauBe_gig3EVDQd_XSo2scGXhqY"} 
+ </msg>
+<msg time="2025-04-22T11:34:29.608123" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:29.608123" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/login/</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:28.987964" elapsed="0.620159"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:29.608123" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NywiZXhwIjoxNzQ1NDE4ODY3fQ.UbRz_JivfhR7W0xIiauBe_gig3EVDQd_XSo2scGXhqY'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:29.608123" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-04-22T11:34:29.618106" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<arg>${TOKEN}</arg>
+<arg>${resposta.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-04-22T11:34:29.608123" elapsed="0.009983"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:28.983974" elapsed="0.634132"/>
+</kw>
+<kw name="Validar o token" owner="login">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-22T11:34:29.618106" level="INFO">${headers} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<var>${headers}</var>
+<arg>Authorization=${TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-22T11:34:29.618106" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-22T11:34:29.828010" level="INFO">GET Request : url=https://black-list.qacoders.dev.br/api/validateToken 
+ path_url=/api/validateToken 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NywiZXhwIjoxNzQ1NDE4ODY3fQ.UbRz_JivfhR7W0xIiauBe_gig3EVDQd_XSo2scGXhqY'} 
+ body=None 
+ </msg>
+<msg time="2025-04-22T11:34:29.828010" level="INFO">GET Response : url=https://black-list.qacoders.dev.br/api/validateToken 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 22 Apr 2025 14:34:28 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '14', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"e-3MDSGou3nIOvlBZElUyTiBbaRZY"'} 
+ body={"valid":true} 
+ </msg>
+<msg time="2025-04-22T11:34:29.828010" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'black-list.qacoders.dev.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-22T11:34:29.828010" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=Blacklist</arg>
+<arg>url=/validateToken</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-22T11:34:29.618106" elapsed="0.209904"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-22T11:34:29.828010" level="INFO">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTc0NTMzMjQ2NywiZXhwIjoxNzQ1NDE4ODY3fQ.UbRz_JivfhR7W0xIiauBe_gig3EVDQd_XSo2scGXhqY</msg>
+<arg>${TOKEN}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-22T11:34:29.828010" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:29.618106" elapsed="0.209904"/>
+</kw>
+<status status="PASS" start="2025-04-22T11:34:28.979984" elapsed="0.848026"/>
+</test>
+<status status="PASS" start="2025-04-22T11:34:28.961214" elapsed="0.866796"/>
+</suite>
+<status status="PASS" start="2025-04-22T11:33:59.208182" elapsed="30.619828"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Get contagemdiretoria">Tests.Get contagemdiretoria</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Post criardiretoria">Tests.Post criardiretoria</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="Post loginadmin">Tests.Post loginadmin</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-04-22T11:34:11.408237" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("&lt;urllib3.connection.HTTPSConnection object at 0x000002162205F8C0&gt;: Failed to resolve 'black-list.qacoders.dev.br' ([Errno 11001] getaddrinfo failed)")': /api/login/</msg>
+</errors>
+</robot>
